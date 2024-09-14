@@ -33,12 +33,23 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-          <form id="taskForm">
-            <input type="text" id="title" placeholder="title">
-            <textarea id="description" placeholder="description"></textarea>
-            <input type="date" id="dueDate" placeholder="dueDate">
-            <button type="submit" class="btn btn-primary">submit</button>
-          </form>
+            <form id="taskForm">
+              <div class="row">
+                <div class="col-5">
+                  <label>task Title</label>
+                  <input type="text" id="title" placeholder="title">
+                </div>
+                <div class='col-2'> </div>
+                <div class="col-5">
+                  <label>Due date</label>
+                  <input type="date" id="dueDate" placeholder="dueDate">
+                </div>
+              </div>
+              <textarea class="col-12" id="description" placeholder="description"></textarea>
+              <div class="col-12 d-flex justify-content-center">
+                <button type="submit" onclick="handleAddTask(event)" class="btn btn-primary">submit</button>
+              </div>
+            </form>
           </div>
           <div class="modal-footer">
           </div>
@@ -52,6 +63,7 @@
             <h2 class="card-title mb-1">To Do</h2>
           </div>
           <div class="card-body bg-light">
+            <!-- to do column  -->
             <div id="todo-cards"></div>
           </div>
         </div>
@@ -62,19 +74,21 @@
             <h2 class="card-title mb-1">In Progress</h2>
           </div>
           <div class="card-body bg-light">
+            <!-- in progress column  -->
             <div id="in-progress-cards"></div>
           </div>
         </div>
+      </div>
+      <div class="col-12 col-lg-4 d-flex">
+        <div id="done" class="card border-light mb-3 lane flex-grow-1">
+          <div class="card-header bg-white">
+            <h2 class="card-title mb-1">Done</h2>
+          </div>
+          <div class="card-body bg-light">
+            <!-- done column -->
+            <div id="done-cards"></div>
+          </div>
         </div>
-        <div class="col-12 col-lg-4 d-flex">
-          <div id="done" class="card border-light mb-3 lane flex-grow-1">
-            <div class="card-header bg-white">
-              <h2 class="card-title mb-1">Done</h2>
-            </div>
-            <div class="card-body bg-light">
-              <div id="done-cards"></div>
-          </div>
-          </div>
       </div>
     </div>
   </div>
@@ -84,6 +98,7 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 

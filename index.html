@@ -9,9 +9,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/dragula.css" />
   <title>Task Board</title>
 </head>
 
@@ -36,15 +35,17 @@
             <form id="taskForm">
               <div class="row">
                 <div class="col-5">
-                  <label>task Title</label>
+                  <lable>Task Title</lable>
                   <input type="text" id="title" placeholder="title">
                 </div>
-                <div class='col-2'> </div>
+                <div class="col-2"></div>
                 <div class="col-5">
-                  <label>Due date</label>
+                  <lable>Task Due Date</lable>
                   <input type="date" id="dueDate" placeholder="dueDate">
                 </div>
               </div>
+              <div class="size-box"></div>
+              <lable>Description</lable>
               <textarea class="col-12" id="description" placeholder="description"></textarea>
               <div class="col-12 d-flex justify-content-center">
                 <button type="submit" onclick="handleAddTask(event)" class="btn btn-primary">submit</button>
@@ -62,9 +63,10 @@
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">To Do</h2>
           </div>
-          <div class="card-body bg-light">
-            <!-- to do column  -->
-            <div id="todo-cards"></div>
+          <div class="card-body bg-light drag-container" id="todo-cards-body">
+            <!-- Todo column -->
+            <div id="todo-cards">
+            </div>
           </div>
         </div>
       </div>
@@ -73,8 +75,8 @@
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">In Progress</h2>
           </div>
-          <div class="card-body bg-light">
-            <!-- in progress column  -->
+          <div class="card-body bg-light drag-container" id="in-progress-column-body">
+            <!-- In Progress column -->
             <div id="in-progress-cards"></div>
           </div>
         </div>
@@ -84,8 +86,8 @@
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">Done</h2>
           </div>
-          <div class="card-body bg-light">
-            <!-- done column -->
+          <div class="card-body bg-light drag-container" id="done-cards-column-body">
+            <!-- Done column -->
             <div id="done-cards"></div>
           </div>
         </div>
@@ -98,11 +100,10 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-
   <script src="./assets/js/script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js'></script>
 </body>
 
 </html>
